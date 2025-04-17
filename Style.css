@@ -1,0 +1,158 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(159, 125, 190);
+    margin: 0;
+}
+
+.contenedor{
+    position: relative;
+}
+
+.superior{
+    position: absolute;
+    border-left: 180px solid transparent;
+    border-right: 180px solid transparent;
+    border-top: 120px solid rgb(162, 84, 179);
+    border-bottom: 120px solid transparent;
+    transition: transform 1s;
+    transform-origin: top;
+}
+
+.mensaje{
+    position: absolute;
+    padding: 1.5rem;
+    line-height: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    font-family: 'Caveat', cursive;
+    font-weight: bold;
+    background-color: #eae2b7;
+    width: 358px;
+    height: 239px;
+    z-index: -1;
+    transition: transform 1s;
+}
+
+.mensaje .firma{
+    position: relative;
+    top: -5px;
+    font-size: 0.9rem;
+}
+
+.mensaje::before{
+    content: "";
+    border-style: dotted;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+}
+
+.carta{
+    border-left: 180px solid rgb(233, 135, 255);
+    border-right: 180px solid rgb(185, 94, 205);
+    border-top: 120px solid transparent;
+    border-bottom: 120px solid rgb(233, 135, 255);
+}
+
+.bx{
+    position: absolute;
+    color: rgb(184, 26, 134);
+    right: 163px;
+    top: 98px;
+    font-size: 30px;
+    transition: .5s ease-in-out;
+    animation: palpitar 0.6s linear infinite;
+}
+
+.ppalabras, h1{
+    transition: transform 1s;
+}
+
+.ppalabras{
+    margin-top: -10px;
+}
+
+.botones{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.boton{
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, rgb(190, 76, 207), blueviolet);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* JavaScript */
+
+.abrir-pp, .abrir-h1{
+    transition: transform 1s;
+    transform: translateY(-100px);
+}
+
+.abrir-pp{
+    margin-bottom: 70px;
+}
+
+.abrir-superior{
+    transform: rotatex(180deg);
+    z-index: -1;
+}
+
+.abrir-mensaje{
+    transform: translateY(-160px);
+}
+
+.bx-rotada{
+    transition: .5s ease-in-out;
+    color: black;
+    animation: none;
+}
+
+@keyframes palpitar {
+    0%{
+        transform: scale(1.07);
+    }
+
+    80%{
+        transform: scale(1.0);
+    }
+
+    100%{
+        transform: scale(1.08);
+    }
+}
+
+@media (max-width: 768px){
+    h1{
+        text-align: center;
+    }
+    .mensaje::before{
+        content: "";
+        border-style: dotted;
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        right: 12px;
+        bottom: 45px;
+    }
+
+    .mensaje .firma{
+        position: relative;
+        top: -15px;
+        font-size: 0.7rem;
+    }
+}
